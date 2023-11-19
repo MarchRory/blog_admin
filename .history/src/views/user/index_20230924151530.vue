@@ -1,0 +1,51 @@
+<script setup lang="ts">
+  import { ref } from 'vue'
+  const userInfo = ref({
+    username: '',
+    password: '',
+    nickname: '',
+    homePath: '',
+    avatar: '',
+    introduce: '',
+  })
+  const contact = ref({
+    userId: '',
+    github: '',
+    gitee: '',
+    csdn: '',
+    juejin: '',
+    email: '',
+    qq: '',
+    vx: '',
+  })
+  const handleUserInfoSubmit = () => {}
+  const onUserInfoSubmitSuccess = () => {}
+  const onUserInfoSubmitFailed = () => {}
+</script>
+
+<template>
+  <div class="p-4 h-1/1 w-1/1 flex md:flex enter-y flex-col justify-between">
+    <div class="w-1/1 h-3/10 flex items-center justify-center">
+      <div class="h-33 w-33 rounded-full overflow-hidden duration-200 hover:shadow-2xl">
+        <img
+          class="object-cover h-1/1 w-1/1"
+          src="https://blog-avatar-1321070494.cos.ap-guangzhou.myqcloud.com/yu_hao_tian.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="w-1/1 h-11/16 flex flex-row justify-between">
+      <div class="h-1/1 w-39/80 bg-fuchsia-400">
+        <a-form
+          :labelCol="{ span: 8 }"
+          :wrapperCol="{ span: 16 }"
+          @submit="handleUserInfoSubmit"
+          @finish="onUserInfoSubmitSuccess"
+          @finishFailed="onUserInfoSubmitFailed"
+        >
+        </a-form>
+      </div>
+      <div class="h-1/1 w-39/80 bg-sky-400"></div>
+    </div>
+  </div>
+</template>
